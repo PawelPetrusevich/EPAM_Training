@@ -49,13 +49,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\QuickSort\QuickSort.csproj">
-      <Project>{0d3044b1-ce3a-4ff4-9c5f-365c606f5794}</Project>
-      <Name>QuickSort</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MergedSort\MergedSort.csproj">
       <Project>{71ccda49-f24a-40c7-9cb4-ab5231abb329}</Project>
       <Name>MergedSort</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickSort\QuickSort.csproj">
+      <Project>{0d3044b1-ce3a-4ff4-9c5f-365c606f5794}</Project>
+      <Name>QuickSort</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

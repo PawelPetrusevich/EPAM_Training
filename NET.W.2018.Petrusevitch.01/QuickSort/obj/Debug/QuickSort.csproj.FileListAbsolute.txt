@@ -1,0 +1,12 @@
+C:\Users\Администратор\Documents\EPAM_Training\QuickSort\bin\Debug\QuickSort.dll
+C:\Users\Администратор\Documents\EPAM_Training\QuickSort\bin\Debug\QuickSort.pdb
+C:\Users\Администратор\Documents\EPAM_Training\QuickSort\obj\Debug\QuickSort.csprojResolveAssemblyReference.cache
+C:\Users\Администратор\Documents\EPAM_Training\QuickSort\obj\Debug\QuickSort.csproj.CoreCompileInputs.cache
+C:\Users\Администратор\Documents\EPAM_Training\QuickSort\obj\Debug\QuickSort.dll
+C:\Users\Администратор\Documents\EPAM_Training\QuickSort\obj\Debug\QuickSort.pdb
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\QuickSort\bin\Debug\QuickSort.dll
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\QuickSort\bin\Debug\QuickSort.pdb
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\QuickSort\obj\Debug\QuickSort.csprojResolveAssemblyReference.cache
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\QuickSort\obj\Debug\QuickSort.csproj.CoreCompileInputs.cache
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\QuickSort\obj\Debug\QuickSort.dll
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\QuickSort\obj\Debug\QuickSort.pdb
