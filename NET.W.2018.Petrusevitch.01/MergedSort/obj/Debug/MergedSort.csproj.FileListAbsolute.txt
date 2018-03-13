@@ -1,0 +1,6 @@
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\MergedSort\bin\Debug\MergedSort.dll
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\MergedSort\bin\Debug\MergedSort.pdb
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\MergedSort\obj\Debug\MergedSort.csprojResolveAssemblyReference.cache
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\MergedSort\obj\Debug\MergedSort.csproj.CoreCompileInputs.cache
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\MergedSort\obj\Debug\MergedSort.dll
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01\MergedSort\obj\Debug\MergedSort.pdb
