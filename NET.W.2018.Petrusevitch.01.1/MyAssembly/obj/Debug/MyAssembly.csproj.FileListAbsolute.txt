@@ -1,0 +1,6 @@
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01.1\MyAssembly\bin\Debug\MyAssembly.dll
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01.1\MyAssembly\bin\Debug\MyAssembly.pdb
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01.1\MyAssembly\obj\Debug\MyAssembly.csprojResolveAssemblyReference.cache
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01.1\MyAssembly\obj\Debug\MyAssembly.csproj.CoreCompileInputs.cache
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01.1\MyAssembly\obj\Debug\MyAssembly.dll
+C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.01.1\MyAssembly\obj\Debug\MyAssembly.pdb
