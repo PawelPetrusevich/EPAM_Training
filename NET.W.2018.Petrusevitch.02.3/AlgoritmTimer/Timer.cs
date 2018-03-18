@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace FindNextBiggerNumberTest
+namespace AlgoritmTimer
 {
     [TestFixture]
-    public class FindNextNumberTests
+    public class Timer
     {
-
         [TestCase(12, ExpectedResult = 21)]
         [TestCase(513, ExpectedResult = 531)]
         [TestCase(2017, ExpectedResult = 2071)]
@@ -21,9 +21,11 @@ namespace FindNextBiggerNumberTest
         [TestCase(3456432, ExpectedResult = 3462345)]
         [TestCase(10, ExpectedResult = -1)]
         [TestCase(20, ExpectedResult = -1)]
-        public int FindAlgoritmTest(int number)
+        public int Test(int number)
         {
-            return FindNextBiggerNumber.FindNextNumber.FindAlgoritm(number);
+            var result = Algoritm.FindAlgoritm(number);
+            var algoritmTime = result.Item2;
+            return result.Item1;
         }
     }
 }
