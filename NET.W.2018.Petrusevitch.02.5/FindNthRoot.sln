@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindNthRoot", "FindNthRoot\FindNthRoot.csproj", "{621707D6-24FE-4D85-8C74-77D0FEC92BBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{621707D6-24FE-4D85-8C74-77D0FEC92BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{621707D6-24FE-4D85-8C74-77D0FEC92BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{621707D6-24FE-4D85-8C74-77D0FEC92BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{621707D6-24FE-4D85-8C74-77D0FEC92BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9B324AE-3B4E-4D8B-8B72-F05E3609FE92}
+	EndGlobalSection
+EndGlobal
