@@ -49,6 +49,7 @@
     <Compile Include="AlgoritmTests.cs" />
     <Compile Include="Euclid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stein.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
