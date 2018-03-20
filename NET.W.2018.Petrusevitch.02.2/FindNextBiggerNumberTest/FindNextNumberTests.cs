@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FindNextBiggerNumber;
 using NUnit.Framework;
 
 namespace FindNextBiggerNumberTest
@@ -23,7 +24,14 @@ namespace FindNextBiggerNumberTest
         [TestCase(20, ExpectedResult = -1)]
         public int FindAlgoritmTest(int number)
         {
-            return FindNextBiggerNumber.FindNextNumber.FindAlgoritm(number);
+            return FindNextNumber.FindAlgoritm(number);
+        }
+
+        [Test]
+        public void FindAlgoritmArgumentExeptionTest()
+        {
+            int number = Int32.MaxValue;
+            Assert.Throws<ArgumentException>(() => FindNextNumber.FindAlgoritm(number));
         }
     }
 }

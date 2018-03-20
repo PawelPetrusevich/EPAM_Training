@@ -9,6 +9,11 @@ namespace DoubleToBitArray
 {
     public class DoubleToBitArrayAlgoritm
     {
+        /// <summary>
+        /// double number to string converter
+        /// </summary>
+        /// <param name="number">double for convert</param>
+        /// <returns>string view bit array</returns>
         public static string Algoritm(double number)
         {
             var sb = new StringBuilder();

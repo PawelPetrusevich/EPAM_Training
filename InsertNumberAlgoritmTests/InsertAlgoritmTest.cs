@@ -28,8 +28,7 @@ namespace InsertNumberAlgoritmTests
         [TestCase(10, 15, -9, -15)]
         public void IndexScopeTest(int numberSource,int numberIn,int i,int j)
         {
-           Assert.That(()=> Algoritm.InsertNumber(numberSource, numberIn, i, j),Throws.TypeOf<ArgumentException>());
-            
+           Assert.That(()=> Algoritm.InsertNumber(numberSource, numberIn, i, j),Throws.TypeOf<ArgumentOutOfRangeException>());
         }
     }
 }

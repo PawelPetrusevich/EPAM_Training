@@ -9,6 +9,10 @@ namespace AlgoritmTimer
         public static Tuple<int,double> FindAlgoritm(int number)
         {
             var watch = Stopwatch.StartNew();
+            if (number== Int32.MaxValue)
+            {
+                throw new ArgumentException($"{nameof(number)} has incorect value.");
+            }
             var numberArray = new int[number.ToString().Length];
             for (int i = numberArray.Length - 1; i >= 0; i--)
             {

@@ -19,6 +19,10 @@ namespace DoubleToBitArray
             "0000000000000000000000000000000000000000000000000000000000000001")]
         [TestCase(double.NaN, ExpectedResult =
             "1111111111111000000000000000000000000000000000000000000000000000")]
+        [TestCase(5.0 / 0 - 8.0 / 0, ExpectedResult =
+            "1111111111111000000000000000000000000000000000000000000000000000")]
+        [TestCase(-0, ExpectedResult = 
+            "0000000000000000000000000000000000000000000000000000000000000000")]
         public string AlgoritmTest(double number)
         {
             return DoubleToBitArrayAlgoritm.Algoritm(number);

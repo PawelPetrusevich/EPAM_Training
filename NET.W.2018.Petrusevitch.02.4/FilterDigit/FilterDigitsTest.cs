@@ -19,5 +19,17 @@ namespace FilterDigit
         {
             return Algoritm.Filter(filterNumber, numberArray);
         }
+
+        [TestCase(50, 0, 15, 50, 05, 18, 91)]
+        public void AlgoritmArgumentOutOfRangeExceptionTest(int filterNumber, params int[] numberArray)
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => Algoritm.Filter(filterNumber, numberArray));
+        }
+
+        [TestCase(5)]
+        public void AlgoritmArgumentNullExceptionTest(int filterNumber, params int[] numberArray)
+        {
+            Assert.Throws<ArgumentNullException>(() => Algoritm.Filter(filterNumber, numberArray));
+        }
     }
 }

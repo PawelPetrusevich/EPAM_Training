@@ -10,16 +10,24 @@ namespace FindNextBiggerNumber
 {
     public class FindNextNumber
     {
+        /// <summary>
+        /// find the number consisting of these digits
+        /// </summary>
+        /// <param name="number">number</param>
+        /// <returns>loked number</returns>
         public static int FindAlgoritm(int number)
         {
+            if (number==Int32.MaxValue)
+            {
+                throw new ArgumentException($"{nameof(number)} has incorect value");
+            }
+            int index = -1;
             var numberArray = new int[number.ToString().Length];
             for (int i = numberArray.Length-1;i>=0;i--)
             {
                 numberArray[i] = number % 10;
                 number = number / 10;
             }
-
-            int index = -1;
 
             for (int i = numberArray.Length - 1; i > 0; i--)
             {
@@ -54,13 +62,16 @@ namespace FindNextBiggerNumber
             {
                 tempArray[i - index - 1] = numberArray[i];
             }
+
             Array.Sort(tempArray);
+
             for (int i = index; i < numberArray.Length-1; i++)
             {
                 resultArray[i+1] = tempArray[i - index];
             }
 
             string numberString = String.Concat(resultArray);
+
             return int.Parse(numberString);
         }
     }

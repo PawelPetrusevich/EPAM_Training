@@ -21,7 +21,7 @@ namespace InsertNumberAlgoritm
         {
             if (i<0 || i>31 || j<0 || j> 31 || i> j)
             {
-                throw new ArgumentException();
+                throw new ArgumentOutOfRangeException($"{nameof(i)} and {nameof(j)} has incorect value");
             }
 
             var numberSourceBitArray = new BitArray(BitConverter.GetBytes(numberSource));
