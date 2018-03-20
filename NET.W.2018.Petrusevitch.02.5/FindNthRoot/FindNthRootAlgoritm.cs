@@ -8,17 +8,20 @@ namespace FindNthRoot
 {
     public class FindNthRootAlgoritm
     {
+        /// <summary>
+        /// Newton`s algoritm for root finding
+        /// </summary>
+        /// <param name="number">number</param>
+        /// <param name="n">root</param>
+        /// <param name="precesion">precesion</param>
+        /// <returns>result number</returns>
         public static double SqrtN(double number, int n, double precesion)
         {
             if (precesion > 1 || precesion < 1e-15)
             {
-                throw new ArgumentException();
+                throw new ArgumentOutOfRangeException();
             }
-
-            if (n<0)
-            {
-                throw new ArgumentException();
-            }
+            
 
             double x0;
             double x1;

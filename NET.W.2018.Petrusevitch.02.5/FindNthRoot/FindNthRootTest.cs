@@ -14,13 +14,12 @@ namespace FindNthRoot
             return FindNthRootAlgoritm.SqrtN(number, n, precesion);
         }
 
-        [TestCase(8, 15, -7)]
         [TestCase(8,15,0.0000000000000000000000000000000000001)]
         [TestCase(8,15,1.1)]
         [Test]
         public void AlgoritmExeptionTest(double number, int n, double precesion)
         {
-            Assert.Throws<ArgumentException>(() => FindNthRootAlgoritm.SqrtN(number, n, precesion));
+            Assert.Throws<ArgumentOutOfRangeException>(() => FindNthRootAlgoritm.SqrtN(number, n, precesion));
         }
     }
 }

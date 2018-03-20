@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertNumberAlgoritm", "InsertNumberAlgoritm\InsertNumberAlgoritm.csproj", "{FBCD2576-57E1-47BD-A5A0-FC79B8F93FEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertNumberAlgoritmTests", "..\InsertNumberAlgoritmTests\InsertNumberAlgoritmTests.csproj", "{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertAlgoritmMSTest", "InsertAlgoritmMSTest\InsertAlgoritmMSTest.csproj", "{4C4B3755-26C1-45B6-B716-FEE24BE1E3E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertNumberAlgoritmTests", "InsertNumberAlgoritmTests\InsertNumberAlgoritmTests.csproj", "{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{FBCD2576-57E1-47BD-A5A0-FC79B8F93FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBCD2576-57E1-47BD-A5A0-FC79B8F93FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBCD2576-57E1-47BD-A5A0-FC79B8F93FEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C4B3755-26C1-45B6-B716-FEE24BE1E3E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C4B3755-26C1-45B6-B716-FEE24BE1E3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C4B3755-26C1-45B6-B716-FEE24BE1E3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C4B3755-26C1-45B6-B716-FEE24BE1E3E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74469C7-A1C3-46BF-BA3C-C56A77A8EFF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
