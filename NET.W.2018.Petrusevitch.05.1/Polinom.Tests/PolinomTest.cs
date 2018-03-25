@@ -19,12 +19,31 @@ namespace Polinom.Tests
         }
 
         //только полиномы одной степени!!!!
-        [TestCase(new double[] { 3, 2, 1 }, new double[] { 1, 2, 3, 10 }, ExpectedResult = "4x^3+4x^2+4x^1")]
-        public string Polinoms_AddOperatorOvveraid_Test(double[] firstArray, double[] secondArray)
+        [TestCase(new double[] { 3, 2, 1 }, new double[] { 1, 2, 3, 10 }, ExpectedResult = "1x^4+5x^3+5x^2+11x^1")]
+        [TestCase(new double[] { 6, 2, 11 }, new double[] { 5, -12, 3, 10 }, ExpectedResult = "5x^4+(-6)x^3+5x^2+21x^1")]
+        public string Polinoms_AddOperatorOverload_Test(double[] firstArray, double[] secondArray)
         {
             Polynomial first = new Polynomial(firstArray);
             Polynomial second = new Polynomial(secondArray);
             return (first + second).ToString();
+        }
+
+        [TestCase(new double[] { 3, 2, 1 }, new double[] { 1, 2, 3, 10 }, ExpectedResult = "(-1)x^4+1x^3+(-1)x^2+(-9)x^1")]
+        [TestCase(new double[] { 6, 2, 11 }, new double[] { 5, -12, 3, 10 }, ExpectedResult = "(-5)x^4+18x^3+(-1)x^2+1x^1")]
+        public string Polinoms_SubstractionOperatorOverload_Test(double[] firstArray, double[] secondArray)
+        {
+            Polynomial first = new Polynomial(firstArray);
+            Polynomial second = new Polynomial(secondArray);
+            return (first - second).ToString();
+        }
+
+        [TestCase(new double[] { 3, 2, 1 }, new double[] { 1, 2, 3, 10 }, ExpectedResult = "3x^7+8x^6+14x^5+38x^4+23x^3+10x^2+0x^1")]
+        [TestCase(new double[] { 6, 2, 11 }, new double[] { 5, -12, 3, 10 }, ExpectedResult = "30x^7+(-62)x^6+49x^5+(-66)x^4+53x^3+110x^2+0x^1")]
+        public string Polinoms_MultiOverload_Test(double[] firstArray, double[] secondArray)
+        {
+            Polynomial first = new Polynomial(firstArray);
+            Polynomial second = new Polynomial(secondArray);
+            return (first * second).ToString();
         }
     }
 }

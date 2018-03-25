@@ -1,41 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Polinom
 {
     public sealed class Polynomial : ICloneable
     {
         private readonly double[] _coeff;
-
+        
         public Polynomial(double[] coeff)
         {
             this._coeff = coeff;
         }
 
-        public double this[int n]
+        public int Power
         {
-            get => _coeff[n];
-            set => _coeff[n] = value;
+            get
+            {
+                return this._coeff.Length;
+            }
         }
 
-        public int Power => _coeff.Length;
+        public double this[int n]
+        {
+            get => this._coeff[n];
+            set => this._coeff[n] = value;
+        }
 
         public override string ToString()
         {
-            if (_coeff.Length == 0)
+            if (this._coeff.Length == 0)
             {
                 return "0";
             }
+
             StringBuilder sb = new StringBuilder();
 
 
-            for (int i = 0; i < Power; i++)
+            for (int i = 0; i < this.Power; i++)
             {
-                sb.Append(_coeff[i] < 0 ? $"+({_coeff[i]})x^{Power - i}" : $"+{_coeff[i]}x^{Power - i}");
+                sb.Append(this._coeff[i] < 0 ? $"+({this._coeff[i]})x^{this.Power - i}" : $"+{this._coeff[i]}x^{this.Power - i}");
             }
 
             if (sb[0] == '+' || sb[0] == '-')
@@ -46,24 +49,113 @@ namespace Polinom
             return sb.ToString();
         }
 
+        public override int GetHashCode()
+        {
+            return this.ToString().GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            Polynomial poly = obj as Polynomial;
+
+            if (poly as Polynomial == null)
+            {
+                return false;
+            }
+
+            return poly.ToString() == this.ToString();
+        }
+
+        public bool Equals(Polynomial poly)
+        {
+            if (poly == null)
+            {
+                return false;
+            }
+
+            return poly.ToString() == this.ToString();
+        }
+
+        public static bool operator ==(Polynomial firstPoly, Polynomial secondPoly)
+        {
+            return Equals(firstPoly, secondPoly);
+        }
+
+        public static bool operator !=(Polynomial firstPoly, Polynomial secondPoly)
+        {
+            return !Equals(firstPoly, secondPoly);
+        }
+
         public static Polynomial operator +(Polynomial firstPolynomial, Polynomial secondPolynomial)
         {
-            double[] coeff = new double[firstPolynomial.Power>secondPolynomial.Power? firstPolynomial.Power : secondPolynomial.Power];
+            double[] coeff = new double[firstPolynomial.Power > secondPolynomial.Power ? firstPolynomial.Power : secondPolynomial.Power];
+
             Polynomial result = new Polynomial(coeff);
-            for (int i = coeff.Length-1; i >0; i--)
+
+            for (int i = coeff.Length; i > 0; i--)
             {
                 double a = 0;
                 double b = 0;
-                if (i<firstPolynomial.Power)
+
+                if (i <= firstPolynomial.Power)
                 {
-                    a = firstPolynomial[i];
+                    a = firstPolynomial[firstPolynomial.Power - i];
                 }
 
-                if (i<secondPolynomial.Power)
+                if (i <= secondPolynomial.Power)
                 {
-                    b = secondPolynomial[i];
+                    b = secondPolynomial[secondPolynomial.Power - i];
                 }
-                result[coeff.Length-i] = a+b;
+
+                result[coeff.Length - i] = a + b;
+            }
+
+            return result;
+        }
+
+        public static Polynomial operator -(Polynomial firstPolynomial, Polynomial secondPolynomial)
+        {
+            double[] coeff = new double[firstPolynomial.Power > secondPolynomial.Power ? firstPolynomial.Power : secondPolynomial.Power];
+
+            Polynomial result = new Polynomial(coeff);
+
+            for (int i = coeff.Length; i > 0; i--)
+            {
+                double a = 0;
+                double b = 0;
+
+                if (i <= firstPolynomial.Power)
+                {
+                    a = firstPolynomial[firstPolynomial.Power - i];
+                }
+
+                if (i <= secondPolynomial.Power)
+                {
+                    b = secondPolynomial[secondPolynomial.Power - i];
+                }
+
+                result[coeff.Length - i] = a - b;
+            }
+
+            return result;
+        }
+
+        public static Polynomial operator *(Polynomial firstPolynomial, Polynomial seconPolynomial)
+        {
+            double[] coeff = new double[firstPolynomial.Power + seconPolynomial.Power];
+            Polynomial result = new Polynomial(coeff);
+
+            for (int i = 0; i < firstPolynomial.Power; i++)
+            {
+                for (int j = 0; j < seconPolynomial.Power; j++)
+                {
+                    result[i + j] += firstPolynomial[i] * seconPolynomial[j];
+                }
             }
 
             return result;
