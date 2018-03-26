@@ -1,8 +1,11 @@
-﻿using System;
-using System.Text;
-
-namespace Polinom
+﻿namespace Polinom
 {
+    using System;
+    using System.Text;
+
+    /// <summary>
+    /// The polynomial class.
+    /// </summary>
     public sealed class Polynomial : ICloneable
     {
         private readonly double[] _coeff;
@@ -35,6 +38,12 @@ namespace Polinom
             set => this._coeff[n] = value;
         }
 
+        /// <summary>
+        /// The ToString override
+        /// </summary>
+        /// <returns>
+        /// The <see cref="string"/>.
+        /// </returns>
         public override string ToString()
         {
             if (this._coeff.Length == 0)
@@ -53,7 +62,7 @@ namespace Polinom
                 }
                 else
                 {
-                    sb.Append(this._coeff[i] < 0 ? $"+({this._coeff[i]})x^{this.Power - i}" : $"+{this._coeff[i]}x^{this.Power - i}");
+                    sb.Append(this._coeff[i] < 0 ? $"+({this._coeff[i]})x^{this.Power - 1 - i}" : $"+{this._coeff[i]}x^{this.Power - 1 - i}");
                 }
 
             }
@@ -66,11 +75,26 @@ namespace Polinom
             return sb.ToString();
         }
 
+        /// <summary>
+        /// The get hash code override 
+        /// </summary>
+        /// <returns>
+        /// Hash-code <see cref="int"/>.
+        /// </returns>
         public override int GetHashCode()
         {
             return this.ToString().GetHashCode();
         }
 
+        /// <summary>
+        /// The equals override whith verification
+        /// </summary>
+        /// <param name="obj">
+        /// The object with which we compare
+        /// </param>
+        /// <returns>
+        /// The boolean <see cref="bool"/>.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -88,6 +112,15 @@ namespace Polinom
             return poly.ToString() == this.ToString();
         }
 
+        /// <summary>
+        /// The equals override
+        /// </summary>
+        /// <param name="poly">
+        /// The Polynom
+        /// </param>
+        /// <returns>
+        /// Boolean <see cref="bool"/>.
+        /// </returns>
         public bool Equals(Polynomial poly)
         {
             if (poly == null)
@@ -98,16 +131,52 @@ namespace Polinom
             return poly.ToString() == this.ToString();
         }
 
+        /// <summary>
+        /// Operator == overrload
+        /// </summary>
+        /// <param name="firstPoly">
+        /// The first poly.
+        /// </param>
+        /// <param name="secondPoly">
+        /// The second poly.
+        /// </param>
+        /// <returns>
+        /// Boolean
+        /// </returns>
         public static bool operator ==(Polynomial firstPoly, Polynomial secondPoly)
         {
             return Equals(firstPoly, secondPoly);
         }
 
+        /// <summary>
+        /// Operator != overload
+        /// </summary>
+        /// <param name="firstPoly">
+        /// The first poly.
+        /// </param>
+        /// <param name="secondPoly">
+        /// The second poly.
+        /// </param>
+        /// <returns>
+        /// Boolean
+        /// </returns>
         public static bool operator !=(Polynomial firstPoly, Polynomial secondPoly)
         {
             return !Equals(firstPoly, secondPoly);
         }
 
+        /// <summary>
+        /// Operator + overrload
+        /// </summary>
+        /// <param name="firstPolynomial">
+        /// The first polynomial.
+        /// </param>
+        /// <param name="secondPolynomial">
+        /// The second polynomial.
+        /// </param>
+        /// <returns>
+        /// New Polynom
+        /// </returns>
         public static Polynomial operator +(Polynomial firstPolynomial, Polynomial secondPolynomial)
         {
             double[] coeff = new double[firstPolynomial.Power > secondPolynomial.Power ? firstPolynomial.Power : secondPolynomial.Power];
@@ -135,6 +204,18 @@ namespace Polinom
             return result;
         }
 
+        /// <summary>
+        /// Operator - overrload
+        /// </summary>
+        /// <param name="firstPolynomial">
+        /// The first polynomial.
+        /// </param>
+        /// <param name="secondPolynomial">
+        /// The second polynomial.
+        /// </param>
+        /// <returns>
+        /// New polynom
+        /// </returns>
         public static Polynomial operator -(Polynomial firstPolynomial, Polynomial secondPolynomial)
         {
             double[] coeff = new double[firstPolynomial.Power > secondPolynomial.Power ? firstPolynomial.Power : secondPolynomial.Power];
@@ -162,6 +243,18 @@ namespace Polinom
             return result;
         }
 
+        /// <summary>
+        /// Operator * overload
+        /// </summary>
+        /// <param name="firstPolynomial">
+        /// The first polynomial.
+        /// </param>
+        /// <param name="seconPolynomial">
+        /// The secon polynomial.
+        /// </param>
+        /// <returns>
+        /// New Polynom
+        /// </returns>
         public static Polynomial operator *(Polynomial firstPolynomial, Polynomial seconPolynomial)
         {
             double[] coeff = new double[firstPolynomial.Power + seconPolynomial.Power];
@@ -178,6 +271,12 @@ namespace Polinom
             return result;
         }
 
+        /// <summary>
+        /// The IClonabale interface implimintation
+        /// </summary>
+        /// <returns>
+        /// Clone for this Polynom <see cref="object"/>.
+        /// </returns>
         public object Clone()
         {
             return this.MemberwiseClone();
