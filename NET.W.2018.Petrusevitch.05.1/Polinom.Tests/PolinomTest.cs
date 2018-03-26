@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Polinom.Tests
 {
@@ -18,7 +13,6 @@ namespace Polinom.Tests
             return polinom.ToString();
         }
 
-        //только полиномы одной степени!!!!
         [TestCase(new double[] { 3, 2, 1 }, new double[] { 1, 2, 3, 10 }, ExpectedResult = "1x^4+5x^3+5x^2+11x^1")]
         [TestCase(new double[] { 6, 2, 11 }, new double[] { 5, -12, 3, 10 }, ExpectedResult = "5x^4+(-6)x^3+5x^2+21x^1")]
         public string Polinoms_AddOperatorOverload_Test(double[] firstArray, double[] secondArray)
@@ -44,6 +38,37 @@ namespace Polinom.Tests
             Polynomial first = new Polynomial(firstArray);
             Polynomial second = new Polynomial(secondArray);
             return (first * second).ToString();
+        }
+
+        [TestCase(new double[] { 1, 2, 3 }, new double[] { 1, 2, 3 })]
+        [TestCase(new double[] { 1, 2, 0 }, new double[] { 1, 2, 0 })]
+        [TestCase(new double[] { 1, 2, 50, 80 }, new double[] { 1, 2, 50, 80 })]
+        public void Polinoms_EqualsOverload_Test(double[] first, double[] second)
+        {
+            Polynomial firstPoly = new Polynomial(first);
+            Polynomial secondPoly = new Polynomial(second);
+            Assert.True(firstPoly.Equals(secondPoly));
+        }
+
+        [TestCase(new double[] { 1, 2, 3 }, new double[] { 1, 2, 3 })]
+        [TestCase(new double[] { 1, 2, 0 }, new double[] { 1, 2, 0 })]
+        [TestCase(new double[] { 1, 2, 50, 80 }, new double[] { 1, 2, 50, 80 })]
+        public void Polinoms_EqualsOperatorOverload_Test(double[] first, double[] second)
+        {
+            Polynomial firstPoly = new Polynomial(first);
+            Polynomial secondPoly = new Polynomial(second);
+            Assert.True(firstPoly == secondPoly);
+            Assert.False(firstPoly != secondPoly);
+        }
+
+        [TestCase(new double[] { 1, 2, 3 }, new double[] { 1, 2, 3 }, ExpectedResult = true)]
+        [TestCase(new double[] { 1, 2, 90 }, new double[] { 1, 2, 0 }, ExpectedResult = false)]
+        [TestCase(new double[] { 1, 2, 50, 80 }, new double[] { 1, 2, 50, 80 }, ExpectedResult = true)]
+        public bool Polinoms_GetHashcodeOverload_Test(double[] first, double[] second)
+        {
+            Polynomial firstPoly = new Polynomial(first);
+            Polynomial secondPoly = new Polynomial(second);
+            return firstPoly.GetHashCode() == secondPoly.GetHashCode();
         }
     }
 }

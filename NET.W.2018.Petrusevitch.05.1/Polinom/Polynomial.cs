@@ -6,9 +6,18 @@ namespace Polinom
     public sealed class Polynomial : ICloneable
     {
         private readonly double[] _coeff;
-        
+
         public Polynomial(double[] coeff)
         {
+            if (coeff == null)
+            {
+                throw new ArgumentNullException(nameof(coeff));
+            }
+
+            if (coeff.Length == 0)
+            {
+                throw new ArgumentException(nameof(coeff));
+            }
             this._coeff = coeff;
         }
 
@@ -38,7 +47,15 @@ namespace Polinom
 
             for (int i = 0; i < this.Power; i++)
             {
-                sb.Append(this._coeff[i] < 0 ? $"+({this._coeff[i]})x^{this.Power - i}" : $"+{this._coeff[i]}x^{this.Power - i}");
+                if ((i + 1 - this.Power) == 0)
+                {
+                    sb.Append(this._coeff[i] < 0 ? $"+({this._coeff[i]})" : $"+{this._coeff[i]}");
+                }
+                else
+                {
+                    sb.Append(this._coeff[i] < 0 ? $"+({this._coeff[i]})x^{this.Power - i}" : $"+{this._coeff[i]}x^{this.Power - i}");
+                }
+
             }
 
             if (sb[0] == '+' || sb[0] == '-')
@@ -63,7 +80,7 @@ namespace Polinom
 
             Polynomial poly = obj as Polynomial;
 
-            if (poly as Polynomial == null)
+            if (poly == null)
             {
                 return false;
             }
