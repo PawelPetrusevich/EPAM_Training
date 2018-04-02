@@ -5,6 +5,20 @@
     [Serializable]
     public class Book : IEquatable<Book>, IComparable<Book>
     {
+        public Book()
+        {
+        }
+
+        public Book(string autorth, string bookName, int isbn, int year, int listCount, decimal price)
+        {
+            this.Autorth = autorth;
+            this.BookName = bookName;
+            this.ISBN = isbn;
+            this.ListCount = listCount;
+            this.Year = year;
+            this.Price = price;
+        }
+
         public int ISBN { get; set; }
 
         public string Autorth { get; set; }
@@ -17,20 +31,28 @@
 
         public decimal Price { get; set; }
 
-        public override string ToString()
-        {
-            return this.BookName;
-        }
+
 
         public static bool operator ==(Book lhs, Book rhs)
         {
-            return lhs.Autorth == rhs.Autorth && lhs.BookName == rhs.BookName && lhs.Year == rhs.Year;
+            if (object.ReferenceEquals(rhs, null))
+            {
+                return object.ReferenceEquals(lhs, null);
+            }
+
+            return lhs.Equals(rhs);
         }
 
         public static bool operator !=(Book lhs, Book rhs)
         {
-            return !(lhs.Autorth == rhs.Autorth && lhs.BookName == rhs.BookName && lhs.Year == rhs.Year);
+            if (object.ReferenceEquals(rhs, null))
+            {
+                return object.ReferenceEquals(lhs, null);
+            }
+
+            return !lhs.Equals(rhs);
         }
+
 
         public override int GetHashCode()
         {
@@ -63,7 +85,7 @@
                 throw new ArgumentNullException();
             }
 
-            if (this.ISBN == other.ISBN)
+            if (this.Autorth == other.Autorth && this.BookName == other.BookName && this.Year == other.Year)
             {
                 return true;
             }
@@ -80,6 +102,11 @@
 
             return this.Price.CompareTo(other.Price);
 
+        }
+
+        public override string ToString()
+        {
+            return this.BookName;
         }
     }
 }

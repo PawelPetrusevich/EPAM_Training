@@ -22,10 +22,25 @@
                 throw new ArgumentNullException();
             }
 
-            if (this.GetAllBooks().Contains(book))
+            if (File.Exists(this.filePath))
             {
-                return false;
+                if (this.GetAllBooks().Count > 0)
+                {
+                    if (this.GetAllBooks().Contains(book))
+                    {
+                        return false;
+                    }
+                }
             }
+
+            if (!File.Exists(this.filePath))
+            {
+                using (FileStream str = new FileStream(this.filePath, FileMode.Create))
+                {
+                }
+            }
+
+
 
             using (BinaryWriter writer = new BinaryWriter(new FileStream(this.filePath, FileMode.Append)))
             {
