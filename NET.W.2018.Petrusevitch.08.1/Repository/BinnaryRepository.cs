@@ -3,9 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
-    using System.Linq.Expressions;
 
+    /// <summary>
+    /// Repository for binnary file
+    /// </summary>
     public class BinnaryRepository : IRepository
     {
         private readonly string filePath;
@@ -15,32 +16,23 @@
             this.filePath = filePath;
         }
 
+        /// <summary>
+        /// The add book to file.
+        /// </summary>
+        /// <param name="book">
+        /// The book.
+        /// </param>
+        /// <returns>
+        /// <see cref="bool"/> operation confirmation
+        /// </returns>
+        /// <exception cref="ArgumentNullException">check for null
+        /// </exception>
         public bool AddBook(Book book)
         {
             if (book == null)
             {
                 throw new ArgumentNullException();
             }
-
-            if (File.Exists(this.filePath))
-            {
-                if (this.GetAllBooks().Count > 0)
-                {
-                    if (this.GetAllBooks().Contains(book))
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            if (!File.Exists(this.filePath))
-            {
-                using (FileStream str = new FileStream(this.filePath, FileMode.Create))
-                {
-                }
-            }
-
-
 
             using (BinaryWriter writer = new BinaryWriter(new FileStream(this.filePath, FileMode.Append)))
             {
@@ -52,9 +44,19 @@
                 writer.Write(book.ListCount);
                 return true;
             }
-
         }
 
+        /// <summary>
+        /// The remove book from file
+        /// </summary>
+        /// <param name="book">
+        /// The book.
+        /// </param>
+        /// <returns>
+        /// The <see cref="bool"/>operation confirmation
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> chek for null
+        /// </exception>
         public bool RemoveBook(Book book)
         {
             if (book == null)
@@ -73,9 +75,14 @@
             }
 
             return result;
-
         }
 
+        /// <summary>
+        /// Get book list
+        /// </summary>
+        /// <returns>
+        /// The <see cref="List"/> book list from file
+        /// </returns>
         public List<Book> GetAllBooks()
         {
             using (BinaryReader reader = new BinaryReader(new FileStream(this.filePath, FileMode.Open)))
