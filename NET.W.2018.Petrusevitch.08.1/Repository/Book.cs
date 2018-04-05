@@ -2,6 +2,8 @@
 {
     using System;
 
+    using static System.String;
+
     [Serializable]
     public class Book : IEquatable<Book>, IComparable<Book>
     {
@@ -106,7 +108,41 @@
 
         public override string ToString()
         {
-            return this.BookName;
+            return this.ToString("N");
+        }
+
+        public string ToString(string format)
+        {
+            if (IsNullOrEmpty(format))
+            {
+                format = "N";
+            }
+
+            BooksStringFormat formater;
+
+            if (!Enum.TryParse(format, out formater))
+            {
+                throw new ArgumentException(nameof(format));
+            }
+
+            switch (formater)
+            {
+                case BooksStringFormat.N:
+                    return Format($"{this.BookName}");
+                case BooksStringFormat.NA:
+                    return Format($"{this.BookName}, {this.Autorth}");
+                case BooksStringFormat.NAY:
+                    return Format($"{this.BookName}, {this.Autorth}, {this.Year}");
+                case BooksStringFormat.NAYL:
+                    return Format($"{this.BookName}, {this.Autorth}, {this.Year}, {this.ListCount}");
+                case BooksStringFormat.NAYLI:
+                    return Format($"{this.BookName}, {this.Autorth}, {this.Year}, {this.ListCount}, {this.ISBN}");
+                case BooksStringFormat.NAYLIP:
+                    return Format($"{this.BookName}, {this.Autorth}, {this.Year}, {this.ListCount}, {this.ISBN}, {this.Price:C}");
+                default:
+                    throw new ArgumentException(nameof(format));
+
+            }
         }
     }
 }
