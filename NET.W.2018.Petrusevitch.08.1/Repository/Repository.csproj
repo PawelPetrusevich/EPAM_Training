@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BinnaryRepository.cs" />
     <Compile Include="Book.cs" />
+    <Compile Include="BookFormat.cs" />
     <Compile Include="BooksStringFormat.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
