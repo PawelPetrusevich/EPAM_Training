@@ -12,21 +12,26 @@ namespace NOD
         /// <summary>
         /// Method for the finding GCD in intenger array
         /// </summary>
-        /// <param name="numbers"></param>
+        /// <param name="numbers">numbers array</param>
         /// <returns>GCD int this array</returns>
         public static Tuple<int, long> Algoritm(params int[] numbers)
         {
             var time = Stopwatch.StartNew();
+
             if (numbers == null || numbers.Length == 0)
             {
                 throw new ArgumentNullException(nameof(numbers));
             }
+
             var result = 0;
+
             foreach (var number in numbers)
             {
                 result = Gcd(result, number);
             }
+
             time.Stop();
+
             return new Tuple<int, long>(result, time.ElapsedMilliseconds);
         }
 
