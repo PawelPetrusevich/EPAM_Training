@@ -10,8 +10,6 @@ namespace JaggedArrayAlgoritm
 
     public class JaggedArray
     {
-        public delegate int ComparerDelegate(int[] x, int[] y);
-
         /// <summary>
         /// The down min elem sort algoritm.
         /// </summary>
@@ -19,7 +17,7 @@ namespace JaggedArrayAlgoritm
         /// The jagged array.
         /// </param>
         /// <param name="comparer">Comparer for jaged</param>
-        public static void SortJaggedAlgoritm(int[][] jaggedArray, ComparerDelegate comparer)
+        public static void SortJaggedAlgoritm(int[][] jaggedArray, ArrayComparer.ComparerDelegate comparer)
         {
             if (jaggedArray == null)
             {

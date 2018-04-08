@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparer\ArrayComparer.cs" />
     <Compile Include="Comparer\IJaggedArrayComparer.cs" />
     <Compile Include="Comparer\JaggedArrayComparer.cs" />
     <Compile Include="JaggedArray.cs" />

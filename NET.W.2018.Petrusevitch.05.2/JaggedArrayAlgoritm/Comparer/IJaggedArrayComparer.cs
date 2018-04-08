@@ -5,22 +5,8 @@
     /// <summary>
     /// The JaggedArrayComparer interface.
     /// </summary>
-    public interface IJaggedArrayComparer : IComparer<int[]>
+    public interface IJaggedArrayComparer
     {
-        /// <summary>
-        /// Default compare
-        /// </summary>
-        /// <param name="x">
-        /// first array
-        /// </param>
-        /// <param name="y">
-        /// second array
-        /// </param>
-        /// <returns>
-        /// The <see cref="int"/>comparer value.
-        /// </returns>
-        int Compare(int[] x, int[] y);
-
         /// <summary>
         /// by summ element descending array sort
         /// </summary>
