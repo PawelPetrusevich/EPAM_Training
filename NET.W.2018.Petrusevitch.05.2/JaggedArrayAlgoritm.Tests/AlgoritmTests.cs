@@ -1,5 +1,7 @@
 ﻿namespace JaggedArrayAlgoritm.Tests
 {
+    using System.Linq;
+
     using JaggedArrayAlgoritm.Comparer;
 
     using NUnit.Framework;
@@ -30,7 +32,7 @@
             result2[1] = new[] { 1, 5, 10 };
             result2[2] = new[] { 2, 3, 8, 9 };
 
-            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().BySumAscending;
+            JaggedArray.ComparerDelegate del = new JaggedArrayComparer().BySumAscending;
 
             JaggedArray.SortJaggedAlgoritm(array, del);
             JaggedArray.SortJaggedAlgoritm(array2, del);
@@ -65,7 +67,7 @@
             result2[1] = new[] { 1, 5, 10 };
             result2[2] = new[] { 1, 2, 3 };
 
-            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().BySumDescending;
+            JaggedArray.ComparerDelegate del = new JaggedArrayComparer().BySumDescending;
 
             JaggedArray.SortJaggedAlgoritm(array, del);
             JaggedArray.SortJaggedAlgoritm(array2, del);
@@ -97,7 +99,7 @@
             result2[1] = new[] { 2, 3, 8, 9 };
             result2[2] = new[] { 1, 5, 10 };
 
-            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().ByMaxAscending;
+            JaggedArray.ComparerDelegate del = new JaggedArrayComparer().ByMaxAscending;
 
             JaggedArray.SortJaggedAlgoritm(array, del);
             JaggedArray.SortJaggedAlgoritm(array2, del);
@@ -129,7 +131,7 @@
             result2[1] = new[] { 2, 3, 8, 9 };
             result2[2] = new[] { 1, 2, 3 };
 
-            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().ByMaxDescending;
+            JaggedArray.ComparerDelegate del = new JaggedArrayComparer().ByMaxDescending;
 
             JaggedArray.SortJaggedAlgoritm(array, del);
             JaggedArray.SortJaggedAlgoritm(array2, del);
@@ -161,7 +163,7 @@
             result2[1] = new[] { 1, 2, 3 };
             result2[2] = new[] { 2, 3, 8, 9 };
 
-            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().ByMinAscending;
+            JaggedArray.ComparerDelegate del = new JaggedArrayComparer().ByMinAscending;
 
             JaggedArray.SortJaggedAlgoritm(array, del);
             JaggedArray.SortJaggedAlgoritm(array2, del);
@@ -194,7 +196,7 @@
             result2[2] = new[] { 1, 2, 3 };
 
 
-            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().ByMinDescending;
+            JaggedArray.ComparerDelegate del = new JaggedArrayComparer().ByMinDescending;
 
             JaggedArray.SortJaggedAlgoritm(array, del);
             JaggedArray.SortJaggedAlgoritm(array2, del);
