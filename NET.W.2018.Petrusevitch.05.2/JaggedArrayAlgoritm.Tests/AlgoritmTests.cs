@@ -1,5 +1,7 @@
 ﻿namespace JaggedArrayAlgoritm.Tests
 {
+    using JaggedArrayAlgoritm.Comparer;
+
     using NUnit.Framework;
 
     [TestFixture]
@@ -28,8 +30,10 @@
             result2[1] = new[] { 1, 5, 10 };
             result2[2] = new[] { 2, 3, 8, 9 };
 
-            JaggedArray.UpSumAlgoritm(array);
-            JaggedArray.UpSumAlgoritm(array2);
+            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().BySumAscending;
+
+            JaggedArray.SortJaggedAlgoritm(array, del);
+            JaggedArray.SortJaggedAlgoritm(array2, del);
 
             Assert.AreEqual(result, array);
             Assert.AreEqual(result2, array2);
@@ -61,8 +65,10 @@
             result2[1] = new[] { 1, 5, 10 };
             result2[2] = new[] { 1, 2, 3 };
 
-            JaggedArray.DownSumAlgoritm(array);
-            JaggedArray.DownSumAlgoritm(array2);
+            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().BySumDescending;
+
+            JaggedArray.SortJaggedAlgoritm(array, del);
+            JaggedArray.SortJaggedAlgoritm(array2, del);
 
             Assert.AreEqual(result, array);
             Assert.AreEqual(result2, array2);
@@ -91,8 +97,10 @@
             result2[1] = new[] { 2, 3, 8, 9 };
             result2[2] = new[] { 1, 5, 10 };
 
-            JaggedArray.UpMaxElemAlgoritm(array);
-            JaggedArray.UpMaxElemAlgoritm(array2);
+            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().ByMaxAscending;
+
+            JaggedArray.SortJaggedAlgoritm(array, del);
+            JaggedArray.SortJaggedAlgoritm(array2, del);
 
             Assert.AreEqual(result, array);
             Assert.AreEqual(result2, array2);
@@ -121,8 +129,10 @@
             result2[1] = new[] { 2, 3, 8, 9 };
             result2[2] = new[] { 1, 2, 3 };
 
-            JaggedArray.DownMaxElemAlgoritm(array);
-            JaggedArray.DownMaxElemAlgoritm(array2);
+            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().ByMaxDescending;
+
+            JaggedArray.SortJaggedAlgoritm(array, del);
+            JaggedArray.SortJaggedAlgoritm(array2, del);
 
             Assert.AreEqual(result, array);
             Assert.AreEqual(result2, array2);
@@ -151,8 +161,10 @@
             result2[1] = new[] { 1, 2, 3 };
             result2[2] = new[] { 2, 3, 8, 9 };
 
-            JaggedArray.UpMinElemAlgoritm(array);
-            JaggedArray.UpMinElemAlgoritm(array2);
+            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().ByMinAscending;
+
+            JaggedArray.SortJaggedAlgoritm(array, del);
+            JaggedArray.SortJaggedAlgoritm(array2, del);
 
             Assert.AreEqual(result, array);
             Assert.AreEqual(result2, array2);
@@ -181,8 +193,11 @@
             result2[1] = new[] { 1, 5, 10 };
             result2[2] = new[] { 1, 2, 3 };
 
-            JaggedArray.DownMinElemAlgoritm(array);
-            JaggedArray.DownMinElemAlgoritm(array2);
+
+            JaggedArrayComparer.ComparerDelegate del = new JaggedArrayComparer().ByMinDescending;
+
+            JaggedArray.SortJaggedAlgoritm(array, del);
+            JaggedArray.SortJaggedAlgoritm(array2, del);
 
             Assert.AreEqual(result, array);
             Assert.AreEqual(result2, array2);
