@@ -28,3 +28,10 @@ https://github.com/PawelPetrusevich/EPAM_Training/tree/DZ_9_1/NET.W.2018.Petruse
 должен.
 
 https://github.com/PawelPetrusevich/EPAM_Training/tree/DZ_10_4/NET.W.2018.Petrusevitch.03.1
+
+# Day 11
+Для приложения с сервисом книг реализовать возможность логирования
+сообщений различного уровня, предусмотрев возможность использования
+различных фреймворков для логирования.
+
+https://github.com/PawelPetrusevich/EPAM_Training/tree/DZ_11_1/NET.W.2018.Petrusevitch.08.1
