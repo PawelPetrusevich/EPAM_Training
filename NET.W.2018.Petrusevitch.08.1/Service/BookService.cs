@@ -8,6 +8,9 @@
 
     using Repository;
 
+    using Serilog;
+    using Serilog.Events;
+
     /// <summary>
     /// The book service.
     /// </summary>
@@ -20,6 +23,7 @@
         {
             this.filePath = path;
             this.bookListStorage = new BinnaryRepository(path);
+            Log.Debug($"{nameof(BookService)} was created");
         }
 
         /// <summary>
@@ -37,7 +41,8 @@
         {
             if (book == null)
             {
-                throw new ArgumentNullException();
+                Log.Error(new ArgumentException(), $"{nameof(book)} is empty");
+                throw new ArgumentNullException($"{nameof(book)} is empty");
             }
 
             if (File.Exists(this.filePath))
@@ -46,6 +51,7 @@
                 {
                     if (this.bookListStorage.GetAllBooks().Contains(book))
                     {
+                        Log.Information($"This {nameof(book)} contains in book storage");
                         return false;
                     }
                 }
@@ -55,6 +61,7 @@
             {
                 using (FileStream str = new FileStream(this.filePath, FileMode.Create))
                 {
+                    Log.Debug("Create new file");
                 }
             }
 
@@ -76,7 +83,8 @@
         {
             if (book == null)
             {
-                throw new ArgumentNullException();
+                Log.Error(new ArgumentNullException(), $"{nameof(book)} is null");
+                throw new ArgumentNullException($"{nameof(book)} is null");
             }
 
             return this.bookListStorage.RemoveBook(book);
@@ -97,7 +105,8 @@
         {
             if (filter == null)
             {
-                throw new ArgumentNullException();
+                Log.Error(new ArgumentNullException(), $"{nameof(filter)} is null");
+                throw new ArgumentNullException($"{nameof(filter)} is null");
             }
 
             return this.bookListStorage.GetAllBooks().FindAll(filter);
@@ -114,6 +123,12 @@
         /// </returns>
         public IEnumerable<Book> SortByTags(IComparer<Book> comparer)
         {
+            if (comparer == null)
+            {
+                Log.Error(new ArgumentException(), $"{nameof(comparer)} is null");
+                throw new ArgumentNullException($"{nameof(comparer)} is null");
+            }
+
             var result = this.bookListStorage.GetAllBooks();
             result.Sort(comparer);
             return result;
