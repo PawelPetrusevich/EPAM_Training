@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReversTimer", "ReversTimer\ReversTimer.csproj", "{F9D11BFE-DD97-4BFA-9416-E3A974502F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleRuner", "ConsoleRuner\ConsoleRuner.csproj", "{325BC6F4-B523-40D1-AE10-F1771C72EAC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9D11BFE-DD97-4BFA-9416-E3A974502F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9D11BFE-DD97-4BFA-9416-E3A974502F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9D11BFE-DD97-4BFA-9416-E3A974502F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9D11BFE-DD97-4BFA-9416-E3A974502F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325BC6F4-B523-40D1-AE10-F1771C72EAC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325BC6F4-B523-40D1-AE10-F1771C72EAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325BC6F4-B523-40D1-AE10-F1771C72EAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325BC6F4-B523-40D1-AE10-F1771C72EAC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DC1F6AB-EF58-4BAA-96C6-9578F0ECDCB8}
+	EndGlobalSection
+EndGlobal
