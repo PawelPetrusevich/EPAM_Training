@@ -3,12 +3,21 @@
     using System;
     using System.Threading;
 
+    /// <summary>
+    /// The timer class.
+    /// </summary>
     public class Timer
     {
         private int second;
 
+        /// <summary>
+        /// The start timer event.
+        /// </summary>
         public event EventHandler<TimerEventArgs> StartTimer;
 
+        /// <summary>
+        /// The end timer event.
+        /// </summary>
         public event EventHandler<TimerEventArgs> TimerIsOver;
 
         public int Second
@@ -49,6 +58,5 @@
                 Console.WriteLine($"Time must over zero.");
             }
         }
-
     }
 }
