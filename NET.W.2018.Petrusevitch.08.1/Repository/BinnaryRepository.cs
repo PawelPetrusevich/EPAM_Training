@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
 
-    using Serilog;
+    using Logger;
 
     /// <summary>
     /// Repository for binnary file
@@ -33,7 +33,7 @@
         {
             if (book == null)
             {
-                Log.Error(new ArgumentException(), $"{nameof(book)} is null");
+                Log.Logger.Error(new ArgumentException(), $"{nameof(book)} is null");
                 throw new ArgumentNullException();
             }
 
@@ -45,7 +45,7 @@
                 writer.Write(book.Year);
                 writer.Write(book.Price);
                 writer.Write(book.ListCount);
-                Log.Information($"{nameof(book)} add to Binarry repository");
+                Log.Logger.Information($"{nameof(book)} add to Binarry repository");
                 return true;
             }
         }
@@ -65,7 +65,7 @@
         {
             if (book == null)
             {
-                Log.Error(new ArgumentNullException(), $"{nameof(book)} is null");
+                Log.Logger.Error(new ArgumentNullException(), $"{nameof(book)} is null");
                 throw new ArgumentNullException();
             }
 
@@ -78,11 +78,11 @@
                     this.AddBook(item);
                 }
 
-                Log.Information($"{nameof(book)} was deleted");
+                Log.Logger.Information($"{nameof(book)} was deleted");
             }
             else
             {
-                Log.Information($"{nameof(book)} not found");
+                Log.Logger.Information($"{nameof(book)} not found");
             }
 
             return result;

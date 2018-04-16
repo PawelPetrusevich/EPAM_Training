@@ -6,10 +6,9 @@
     using System.Linq;
     using System.Linq.Expressions;
 
-    using Repository;
+    using Logger;
 
-    using Serilog;
-    using Serilog.Events;
+    using Repository;
 
     /// <summary>
     /// The book service.
@@ -23,7 +22,7 @@
         {
             this.filePath = path;
             this.bookListStorage = new BinnaryRepository(path);
-            Log.Debug($"{nameof(BookService)} was created");
+            Log.Logger.Debug($"{nameof(BookService)} was created");
         }
 
         /// <summary>
@@ -41,7 +40,7 @@
         {
             if (book == null)
             {
-                Log.Error(new ArgumentException(), $"{nameof(book)} is empty");
+                Log.Logger.Error(new ArgumentException(), $"{nameof(book)} is empty");
                 throw new ArgumentNullException($"{nameof(book)} is empty");
             }
 
@@ -51,7 +50,7 @@
                 {
                     if (this.bookListStorage.GetAllBooks().Contains(book))
                     {
-                        Log.Information($"This {nameof(book)} contains in book storage");
+                        Log.Logger.Information($"This {nameof(book)} contains in book storage");
                         return false;
                     }
                 }
@@ -61,7 +60,7 @@
             {
                 using (FileStream str = new FileStream(this.filePath, FileMode.Create))
                 {
-                    Log.Debug("Create new file");
+                    Log.Logger.Debug("Create new file");
                 }
             }
 
@@ -83,7 +82,7 @@
         {
             if (book == null)
             {
-                Log.Error(new ArgumentNullException(), $"{nameof(book)} is null");
+                Log.Logger.Error(new ArgumentNullException(), $"{nameof(book)} is null");
                 throw new ArgumentNullException($"{nameof(book)} is null");
             }
 
@@ -105,7 +104,7 @@
         {
             if (filter == null)
             {
-                Log.Error(new ArgumentNullException(), $"{nameof(filter)} is null");
+                Log.Logger.Error(new ArgumentNullException(), $"{nameof(filter)} is null");
                 throw new ArgumentNullException($"{nameof(filter)} is null");
             }
 
@@ -125,7 +124,7 @@
         {
             if (comparer == null)
             {
-                Log.Error(new ArgumentException(), $"{nameof(comparer)} is null");
+                Log.Logger.Error(new ArgumentException(), $"{nameof(comparer)} is null");
                 throw new ArgumentNullException($"{nameof(comparer)} is null");
             }
 

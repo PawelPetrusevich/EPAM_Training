@@ -2,7 +2,7 @@
 {
     using System;
 
-    using Serilog;
+    using Logger;
 
     [Serializable]
     public class Book : IEquatable<Book>, IComparable<Book>
@@ -19,7 +19,7 @@
             this.ListCount = listCount;
             this.Year = year;
             this.Price = price;
-            Log.Debug($"{nameof(bookName)} was created");
+            Log.Logger.Debug($"{nameof(bookName)} was created");
         }
 
         public int ISBN { get; set; }
@@ -48,9 +48,9 @@
         /// </returns>
         public static bool operator ==(Book lhs, Book rhs)
         {
-            if (object.ReferenceEquals(lhs, null))
+            if (object.ReferenceEquals(rhs, null))
             {
-                return object.ReferenceEquals(rhs, null);
+                return object.ReferenceEquals(lhs, null);
             }
 
             return lhs.Equals(rhs);
@@ -70,9 +70,9 @@
         /// </returns>
         public static bool operator !=(Book lhs, Book rhs)
         {
-            if (object.ReferenceEquals(lhs, null))
+            if (object.ReferenceEquals(rhs, null))
             {
-                return object.ReferenceEquals(rhs, null);
+                return object.ReferenceEquals(lhs, null);
             }
 
             return !lhs.Equals(rhs);
@@ -108,7 +108,7 @@
         {
             if (obj == null)
             {
-                Log.Error(new ArgumentNullException(), $"This type is null");
+                Log.Logger.Error(new ArgumentNullException(), $"This type is null");
                 throw new ArgumentNullException();
             }
 
@@ -135,7 +135,7 @@
         {
             if (other == null)
             {
-                Log.Error(new ArgumentNullException(), $"This type is null");
+                Log.Logger.Error(new ArgumentNullException(), $"This type is null");
                 throw new ArgumentNullException();
             }
 
@@ -162,7 +162,7 @@
         {
             if (other == null)
             {
-                Log.Error(new ArgumentNullException(), $"This object is null");
+                Log.Logger.Error(new ArgumentNullException(), $"This object is null");
                 throw new ArgumentNullException();
             }
 
