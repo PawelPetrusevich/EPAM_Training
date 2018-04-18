@@ -35,3 +35,11 @@ https://github.com/PawelPetrusevich/EPAM_Training/tree/DZ_10_4/NET.W.2018.Petrus
 различных фреймворков для логирования.
 
 https://github.com/PawelPetrusevich/EPAM_Training/tree/DZ_11_1/NET.W.2018.Petrusevitch.08.1
+
+# Day 13
+Разработать обобщенный класс-коллекцию Queue, реализующий основные
+операции для работы с очередью, и предоставляющий возможность
+итерирования, реализовав итератор «вручную» (без использования блок-
+итератора yield). Протестировать методы разработанного класса.
+
+https://github.com/PawelPetrusevich/EPAM_Training/tree/DZ_11_1/NET.W.2018.Petrusevitch.13.1
