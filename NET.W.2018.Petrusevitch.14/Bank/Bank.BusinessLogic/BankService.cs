@@ -67,7 +67,7 @@ namespace Bank.BusinessLogic
 
             account.IsDelete = true;
 
-            return true;
+            return this.repository.UpdateAccount(account);
         }
 
         public bool AddBalance(int accountId, decimal sum)
@@ -86,7 +86,7 @@ namespace Bank.BusinessLogic
 
             account.Balance = account.Balance + sum;
 
-            return true;
+            return this.repository.UpdateAccount(account);
         }
 
         public bool RemoveBalance(int accountId, decimal sum)
@@ -110,7 +110,7 @@ namespace Bank.BusinessLogic
 
             account.Balance = account.Balance - sum;
 
-            return true;
+            return this.repository.UpdateAccount(account);
         }
     }
 }

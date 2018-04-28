@@ -40,6 +40,7 @@ namespace Bank.Tests.Bank.BusonessLogic.Tests
             this.mockBankRepository.Setup(x => x.AddAccount(It.IsAny<Account>())).Returns(true);
             this.mockBankRepository.Setup(x => x.AddAccount(null)).Throws<ArgumentNullException>();
             this.mockBankRepository.Setup(x => x.FindById(It.IsAny<int>())).Returns(new Account());
+            this.mockBankRepository.Setup(x => x.UpdateAccount(It.IsAny<Account>())).Returns(true);
 
             this.service = new BankService(this.mockBankRepository.Object);
         }

@@ -19,5 +19,9 @@ namespace Bank.Common.Interface
         bool AddAccount(Account account);
 
         Account FindById(int id);
+
+        bool UpdateAccount(Account account);
+
+        bool DeleteAccount(int id);
     }
 }

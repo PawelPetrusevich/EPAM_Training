@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bank.BusonessLogic.Tests\BankServiceTest.cs" />
-    <Compile Include="Bank.DataAccess.Tests\BankRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

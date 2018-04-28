@@ -12,9 +12,12 @@
 
 namespace BankConsole
 {
+    using System.Data.Entity;
+
     using Bank.BusinessLogic;
     using Bank.Common.Interface;
     using Bank.DataAccess;
+    using Bank.DataAccess.Context;
 
     using Ninject.Modules;
     public class NinjectConfiguration : NinjectModule
@@ -23,6 +26,7 @@ namespace BankConsole
         {
             this.Bind<IBankService>().To<BankService>();
             this.Bind<IBankRepository>().To<BankRepository>();
+            this.Bind<DbContext>().To<BankContext>();
         }
     }
 }
