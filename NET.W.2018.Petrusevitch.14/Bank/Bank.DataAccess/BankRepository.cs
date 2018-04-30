@@ -1,22 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bank.DataAccess
+﻿namespace Bank.DataAccess
 {
+    using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
+    using System.Linq;
 
     using Bank.Common.Interface;
     using Bank.Common.Model;
 
+    /// <summary>
+    /// The bank repository.
+    /// </summary>
     public class BankRepository : IBankRepository, IDisposable
     {
+        /// <summary>
+        /// The bank context.
+        /// </summary>
         private readonly DbContext context;
 
+        /// <summary>
+        /// The account dbset.
+        /// </summary>
         private readonly DbSet<Account> dbSet;
 
+        /// <summary>
+        /// The dispose flag.
+        /// </summary>
         private bool dispose;
 
         public BankRepository(DbContext context)
@@ -30,8 +39,17 @@ namespace Bank.DataAccess
             this.Dispose(false);
         }
 
-        public List<Account> Accounts { get; set; }
-
+        /// <summary>
+        /// Create account.
+        /// </summary>
+        /// <param name="account">
+        /// The new account.
+        /// </param>
+        /// <returns>
+        /// The <see cref="bool"/>boolean result.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">null checked.
+        /// </exception>
         public bool AddAccount(Account account)
         {
             if (account == null)
@@ -50,6 +68,15 @@ namespace Bank.DataAccess
             return true;
         }
 
+        /// <summary>
+        /// Find account by id.
+        /// </summary>
+        /// <param name="id">
+        /// The account id.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Account"/>finding account.
+        /// </returns>
         public Account FindById(int id)
         {
             var account = this.dbSet.SingleOrDefault(x => x.Id == id);
@@ -57,6 +84,17 @@ namespace Bank.DataAccess
             return account;
         }
 
+        /// <summary>
+        /// The update account.
+        /// </summary>
+        /// <param name="account">
+        /// The account.
+        /// </param>
+        /// <returns>
+        /// The <see cref="bool"/>boolean result.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">null cheked.
+        /// </exception>
         public bool UpdateAccount(Account account)
         {
             if (account == null)
@@ -69,30 +107,31 @@ namespace Bank.DataAccess
             return true;
         }
 
-        public bool DeleteAccount(int id)
+        /// <summary>
+        /// The get accounts.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="List"/>accounts list.
+        /// </returns>
+        public List<Account> GetAccounts()
         {
-            if (id <= 0)
-            {
-                throw new ArgumentException();
-            }
-
-            var account = this.dbSet.SingleOrDefault(x => x.Id == id);
-            if (account == null)
-            {
-                return false;
-            }
-
-            this.dbSet.Remove(account);
-            this.context.SaveChanges();
-
-            return true;
+            return this.dbSet.ToList();
         }
 
+        /// <summary>
+        /// The dispose.
+        /// </summary>
         public void Dispose()
         {
-            Dispose(true);
+            this.Dispose(true);
         }
 
+        /// <summary>
+        /// The dispose pattern
+        /// </summary>
+        /// <param name="flag">
+        /// The flag.
+        /// </param>
         protected virtual void Dispose(bool flag)
         {
             if (this.dispose)

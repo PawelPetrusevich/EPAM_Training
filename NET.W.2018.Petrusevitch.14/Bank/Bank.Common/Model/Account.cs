@@ -14,12 +14,12 @@
 namespace Bank.Common.Model
 {
     using System;
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
 
-    using Bank.Common.Annotations;
     using Bank.Common.Enums;
 
+    /// <summary>
+    /// The account.
+    /// </summary>
     public class Account
     {
         private decimal balance;
@@ -29,6 +29,12 @@ namespace Bank.Common.Model
             this.BonusOnChange += this.BonusChange;
         }
 
+
+        /// <summary>
+        /// The bonus on change event.
+        /// </summary>
+        public event EventHandler<decimal> BonusOnChange;
+
         public int Id { get; set; }
 
         public string FirstName { get; set; }
@@ -37,40 +43,58 @@ namespace Bank.Common.Model
 
         public decimal Balance
         {
-            get
-            {
-                return this.balance;
-            }
+            get => this.balance;
 
             set
             {
                 this.balance = value;
-                BonusChange(value);
+                this.BonusChange(value);
             }
             
         }
 
-        public int Bonus { get; set; }
+        public int Bonus { get; set; } = 0;
 
         public AccountType AccountType { get; set; } = AccountType.Base;
 
         public bool IsDelete { get; set; } = false;
 
-        public event EventHandler<decimal> BonusOnChange;
-
-        private void BonusChange(decimal sum)
+        /// <summary>
+        /// The to string override.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="string"/> account string.
+        /// </returns>
+        public override string ToString()
         {
-            EventHandler<decimal> handler = BonusOnChange;
-            if (handler != null)
-            {
-                handler(this, sum);
-            }
+            return $"Name: {this.FirstName} {this.LastName}  Balance: {this.Balance}  Bonus: {this.Bonus}";
         }
 
+        /// <summary>
+        /// The bonus change.
+        /// </summary>
+        /// <param name="sum">
+        /// The sum.
+        /// </param>
+        private void BonusChange(decimal sum)
+        {
+            EventHandler<decimal> handler = this.BonusOnChange;
+
+            handler?.Invoke(this, sum);
+        }
+
+        /// <summary>
+        /// The bonus change methods.
+        /// </summary>
+        /// <param name="e">
+        /// The object sender.
+        /// </param>
+        /// <param name="sum">
+        /// The sum.
+        /// </param>
         private void BonusChange(object e, decimal sum)
         {
             this.Bonus = this.Bonus + (int)sum / (int)this.AccountType;
-            Console.WriteLine("Event Call");
         }
     }
 }

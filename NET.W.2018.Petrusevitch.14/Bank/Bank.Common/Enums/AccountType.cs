@@ -15,8 +15,8 @@ namespace Bank.Common.Enums
 {
     public enum AccountType
     {
-        Base = 1,
-        Gold = 2,
-        Silver = 3
+        Base = 10,
+        Gold = 20,
+        Silver = 30
     }
 }
