@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<urlAdresess>
+  <urlAdress>
+    <host name="github.com" />
+    <uri>
+      <segment>AnzhelikaKravchuk</segment>
+    </uri>
+    <parametrs>
+      <Parametr value="repositories" key="tab" />
+    </parametrs>
+  </urlAdress>
+  <urlAdress>
+    <host name="habrahabr.ru" />
+    <uri>
+      <segment>company</segment>
+      <segment>it-grad</segment>
+      <segment>blog</segment>
+      <segment>341486</segment>
+    </uri>
+  </urlAdress>
+  <urlAdress>
+    <host name="github.com" />
+    <uri>
+      <segment>AnzhelikaKravchuk</segment>
+      <segment>2017-2018.MMF.BSU</segment>
+    </uri>
+  </urlAdress>
+  <urlAdress>
+    <host name="drive.google.com" />
+    <uri>
+      <segment>drive</segment>
+      <segment>folders</segment>
+    </uri>
+  </urlAdress>
+  <urlAdress>
+    <host name="www.c-sharpcorner.com" />
+    <uri>
+      <segment>UploadFile</segment>
+      <segment>3d39b4</segment>
+      <segment>crud-operations-using-the-generic-repository-pattern-and-dep</segment>
+    </uri>
+  </urlAdress>
+  <urlAdress>
+    <host name="www.c-sharpcorner.com" />
+    <uri>
+      <segment>article</segment>
+      <segment>dependency-inject-using-ninject-ioc-in-console-application</segment>
+    </uri>
+  </urlAdress>
+  <urlAdress>
+    <host name="stackoverflow.com" />
+    <uri>
+      <segment>questions</segment>
+      <segment>34246778</segment>
+      <segment>dependency-injection-in-my-console-app-using-ninject</segment>
+    </uri>
+  </urlAdress>
+  <urlAdress>
+    <host name="github.com" />
+    <uri>
+      <segment>AnzhelikaKravchuk</segment>
+    </uri>
+    <parametrs>
+      <Parametr value="repositories" key="tab" />
+    </parametrs>
+  </urlAdress>
+</urlAdresess>

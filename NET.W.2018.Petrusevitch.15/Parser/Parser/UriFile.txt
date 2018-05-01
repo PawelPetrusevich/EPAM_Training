@@ -1,0 +1,8 @@
+https://github.com/AnzhelikaKravchuk?tab=repositories
+https://habrahabr.ru/company/it-grad/blog/341486/
+https://github.com/AnzhelikaKravchuk/2017-2018.MMF.BSU/
+https://drive.google.com/drive/folders
+https://www.c-sharpcorner.com/UploadFile/3d39b4/crud-operations-using-the-generic-repository-pattern-and-dep/
+https://www.c-sharpcorner.com/article/dependency-inject-using-ninject-ioc-in-console-application/
+https://stackoverflow.com/questions/34246778/dependency-injection-in-my-console-app-using-ninject
+https://github.com/AnzhelikaKravchuk?tab=repositories
