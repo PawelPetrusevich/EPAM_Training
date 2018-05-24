@@ -8,6 +8,8 @@ namespace Parser.Test
 {
     using NUnit.Framework;
 
+    using Parser.BusinessLogic.Services;
+
     [TestFixture]
     public class ParserTest
     {
@@ -18,7 +20,7 @@ namespace Parser.Test
                 @"C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.15\Parser\Parser\UriFile.txt";
             string xmlPath =
                 @"C:\Users\Администратор\Documents\EPAM_Training\NET.W.2018.Petrusevitch.15\Parser\Parser\Uri.xml";
-            FileParser fileParser = new FileParser(new XmlParser(xmlPath), filePath);
+            IFileParser fileParser = new FileParser(new XmlParser(xmlPath), filePath);
             fileParser.ReadTxtFile();
             Assert.IsTrue(true);
         }

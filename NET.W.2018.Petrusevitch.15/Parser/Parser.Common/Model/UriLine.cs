@@ -10,7 +10,7 @@
 //  </summary> 
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Parser
+namespace Parser.Common.Model
 {
     using System.Collections.Generic;
 

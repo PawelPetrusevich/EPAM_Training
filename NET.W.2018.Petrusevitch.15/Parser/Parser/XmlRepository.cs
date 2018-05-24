@@ -1,21 +1,22 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Parser" file=" IXmlParser.cs">
+// <copyright company="Parser" file=" XmlRepository.cs">
 //  Creator name: 
 //  Solution: Parser
-//  Project: Parser    
+//  Project: Parser.DataAccess    
 // </copyright>
 // <summary>
-//  Filename: IXmlParser.cs
-//  Created day: 01.05.2018    19:01
+//  Filename: XmlRepository.cs
+//  Created day: 04.05.2018    8:28
 //  </summary> 
 //  --------------------------------------------------------------------------------------------------------------------
 
 namespace Parser
 {
-    using System.Collections.Generic;
-
-    public interface IXmlParser
+    public class XmlRepository
     {
-        bool AddLineToXml(List<UriLine> uriLine);
+        public void SaveXml()
+        {
+            
+        }
     }
 }

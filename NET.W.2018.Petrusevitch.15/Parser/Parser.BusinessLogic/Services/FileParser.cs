@@ -1,10 +1,12 @@
-﻿namespace Parser
+﻿namespace Parser.BusinessLogic.Services
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
 
-    public class FileParser
+    using Parser.Common.Interfaces;
+    using Parser.Common.Model;
+
+    public class FileParser : IFileParser
     {
         private readonly IXmlParser xmlParser;
 

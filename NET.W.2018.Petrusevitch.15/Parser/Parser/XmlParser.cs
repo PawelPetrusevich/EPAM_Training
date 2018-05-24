@@ -17,10 +17,11 @@ namespace Parser
     using System.Xml;
     using System.Xml.Linq;
 
+    using Parser.Common.Interfaces;
+    using Parser.Common.Model;
+
     public class XmlParser : IXmlParser
     {
-
-
         private readonly string path;
 
         public XmlParser(string path)
