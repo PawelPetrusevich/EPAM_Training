@@ -20,6 +20,7 @@ namespace Bank.MVC
         {
             app.CreatePerOwinContext<IdentityContext>(IdentityContext.Create);
             app.CreatePerOwinContext<IdentityUserManager>(IdentityUserManager.Create);
+            app.CreatePerOwinContext<IdentityRoleManager>(IdentityRoleManager.Create);
             app.UseCookieAuthentication(
                 new CookieAuthenticationOptions
                     {

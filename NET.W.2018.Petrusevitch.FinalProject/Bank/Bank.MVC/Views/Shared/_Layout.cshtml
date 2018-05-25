@@ -11,13 +11,11 @@
 <body>
     <div class="navbar">
         <div class="container">
-            <div class="navbar nav-link navbar-dark">
-                <span class="btn">@Html.ActionLink("Домашняя страница", "Index", "Home")</span>
-                <span class="btn">@Html.ActionLink("О программе", "About", "Home")</span>
-                <span class="btn">@Html.ActionLink("Контакт", "Contact", "Home")</span>
-
+            <div class="navbar nav-link btn-group">
+                <div class="btn btn-info btn-link">@Html.ActionLink("Home Page", "Index", "Home")</div>
+                <div class="btn btn-info btn-link">@Html.ActionLink("Registration", "Register", "Account")</div>
+                <div class="btn btn-info btn-link">@Html.ActionLink("Login", "Login", "Account")</div>
             </div>
-            @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
     </div>
     <div class="container body-content">
